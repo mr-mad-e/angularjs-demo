@@ -1,0 +1,29 @@
+<main class="main-content">
+    <div class="container">
+        <div class="page">
+            <div class="breadcrumbs">
+                <a href="#/">Home</a>
+                <span>Admin</span>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Admin</h2>
+                        <form ng-submit="vm.submit()">
+                        <div class="contact-form">
+                            <input type="text" class="name" placeholder="Title..." ng-model="vm.model.Title">
+                            <input type="text" class="email" placeholder="Year..." ng-model="vm.model.Year">
+                            <input type="text" class="website" placeholder="Image url..." ng-model="vm.model.Poster">
+                            <textarea class="message" placeholder="Plot..." ng-model="vm.model.Plot"></textarea>
+                            <input type="submit" value="Submit">
+
+                        </div>
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div> <!-- .container -->
+</main>

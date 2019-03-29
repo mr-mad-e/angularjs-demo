@@ -1,0 +1,48 @@
+<main class="main-content">
+    <div class="container">
+        <div class="page">
+            <div class="breadcrumbs">
+                <a href="#/">Home</a>
+                <span>Movie Review</span>
+            </div>
+
+            <div class="filters">
+                <select name="#" id="#" placeholder="Choose Category">
+                    <option value="#">Action</option>
+                    <option value="#">Drama</option>
+                    <option value="#">Fantasy</option>
+                    <option value="#">Horror</option>
+                    <option value="#">Adventure</option>
+                </select>
+                <select name="#" id="#" ng-model="vm.query.filterYear" ng-change="vm.getMovies()">
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                </select>
+            </div>
+            <div class="movie-list">
+                <div class="movie" ng-repeat="movie in vm.movies">
+                    <figure class="movie-poster">
+                        <a href="#/review/{{movie.Id}}">
+                            <img src="{{movie.Poster}}" alt="#">
+                        </a>
+                    </figure>
+                    <div class="movie-title"><a href="#/review/{{movie.Id}}">{{movie.Title}}</a></div>
+                    <p>{{movie.Plot}}</p>
+                </div>
+            </div> <!-- .movie-list -->
+
+            <div class="pagination" ng-if="!vm.query.filterYear" uib-pagination items-per-page="vm.maxSize"
+                total-items="vm.totalItems"
+                ng-model="vm.query.page" ng-change="vm.getMovies()">
+                <!-- <a href="#" class="page-number prev"><i class="fa fa-angle-left"></i></a>
+                <span class="page-number current">1</span>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="page-number">4</a>
+                <a href="#" class="page-number">5</a>
+                <a href="#" class="page-number next"><i class="fa fa-angle-right"></i></a> -->
+            </div>
+        </div>
+    </div> <!-- .container -->
+</main>
